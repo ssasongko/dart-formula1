@@ -1,0 +1,2 @@
+Dalam contoh di atas, kita menggambarkan bagaimana setiap pembalap (handler) melakukan persiapan diri sebelum balapan. Setelah pembalap pertama selesai persiapan, tugas tersebut diteruskan ke pembalap kedua dengan menggunakan pola Chain of Responsibility.
+Pola Chain of Responsibility memungkinkan Anda mengatur urutan tindakan dan memberikan fleksibilitas dalam menambahkan atau mengubah handler dalam rantai.

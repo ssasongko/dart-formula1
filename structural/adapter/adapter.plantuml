@@ -1,0 +1,35 @@
+@startuml Adapter
+
+interface MobilBalap {
+  + akselerasi()
+  + belok()
+}
+
+class MobilF1 {
+  + akselerasi()
+  + belok()
+}
+
+interface DataPerforma {
+  + getTenagaMesin()
+  + getKecepatanMaksimal()
+}
+
+class SistemPerforma {
+  + getTenagaMesin()
+  + getKecepatanMaksimal()
+}
+
+class AdapterPerforma {
+  - _sistemPerforma: DataPerforma
+  + AdapterPerforma(sistem: DataPerforma)
+  + akselerasi()
+  + belok()
+}
+
+MobilBalap <|.. MobilF1
+DataPerforma <|.. SistemPerforma
+MobilBalap <|.. AdapterPerforma
+AdapterPerforma o-- DataPerforma
+
+@enduml

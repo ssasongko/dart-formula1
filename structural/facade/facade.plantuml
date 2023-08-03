@@ -1,0 +1,43 @@
+@startuml
+
+class PersiapanBalapan {
+  + persiapanMobil()
+}
+
+class Kualifikasi {
+  + jalankanKualifikasi()
+}
+
+class PitStop {
+  + lakukanPitStop()
+}
+
+class Interview {
+  + lakukanInterview()
+}
+
+class Selebrasi {
+  + lakukanSelebrasi()
+}
+
+class F1Facade {
+  - _persiapanBalapan: PersiapanBalapan
+  - _kualifikasi: Kualifikasi
+  - _pitStop: PitStop
+  - _interview: Interview
+  - _selebrasi: Selebrasi
+  + F1Facade()
+  + persiapanBalapan()
+  + lakukanKualifikasi()
+  + lakukanPitStop()
+  + lakukanInterviewSetelahBalapan()
+  + lakukanSelebrasiDiPodium()
+}
+
+PersiapanBalapan ..> F1Facade
+Kualifikasi ..> F1Facade
+PitStop ..> F1Facade
+Interview ..> F1Facade
+Selebrasi ..> F1Facade
+
+@enduml

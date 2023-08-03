@@ -1,0 +1,25 @@
+@startuml
+
+class F1RaceTemplate {
+  +mulaiBalapan()
+  #persiapkanMobil()
+  #lakukanStartBalapan()
+  #lakukanBalapan()
+  #lakukanPitStop()
+  #selesaikanBalapan()
+}
+
+class MonacoGrandPrix {
+  +lakukanStartBalapan()
+  +lakukanBalapan()
+}
+
+class BelgianGrandPrix {
+  +lakukanStartBalapan()
+  +lakukanBalapan()
+}
+
+F1RaceTemplate <|-- MonacoGrandPrix
+F1RaceTemplate <|-- BelgianGrandPrix
+
+@enduml

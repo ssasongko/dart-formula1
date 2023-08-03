@@ -1,0 +1,18 @@
+@startuml
+
+class MobilBalapPrototype {
+  + clone(): MobilBalapPrototype
+  + info()
+}
+
+class MobilF1 {
+  - _nama: String
+  - _tahun: int
+  + MobilF1(nama: String, tahun: int)
+  + clone(): MobilBalapPrototype
+  + info()
+}
+
+MobilBalapPrototype <|-- MobilF1
+
+@enduml

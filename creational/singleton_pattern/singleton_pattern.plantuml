@@ -1,0 +1,19 @@
+@startuml Singleton Pattern 
+
+class F1Track {
+  - name: String
+  - location: String
+  - lengthInKm: double
+  - topSpeedKmh: double
+  - numberOfTurns: int
+  - bestLapTime: String
+
+  + F1Track(name: String, location: String, lengthInKm: double, topSpeedKmh: double, numberOfTurns: int, bestLapTime: String)
+  + displayInfo(): void
+  + setBestLapTime(newTime: String): void
+}
+
+F1Track -- Main : Uses
+
+
+@enduml

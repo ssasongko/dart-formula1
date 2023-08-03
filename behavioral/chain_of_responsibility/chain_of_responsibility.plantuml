@@ -1,0 +1,22 @@
+@startuml Chain Of Responsibili
+
+abstract class PimpinanTim {
+  PimpinanTim _successor
+
+  + setSuccessor(successor: PimpinanTim)
+  + handleRequest(request: String)
+}
+
+class TimPrincipal {
+  + handleRequest(request: String)
+}
+
+class Pembalap {
+  - _nama: String
+  + handleRequest(request: String)
+}
+
+PimpinanTim <|-- TimPrincipal
+PimpinanTim <|-- Pembalap
+
+@enduml
