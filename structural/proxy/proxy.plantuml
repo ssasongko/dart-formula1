@@ -1,0 +1,30 @@
+@startuml
+
+class F1Track {
+  String name
+  String location
+  double lengthInKm
+  double topSpeedKmh
+  int numberOfTurns
+  String bestLapTime
+
+  + F1Track(name, location, lengthInKm, topSpeedKmh, numberOfTurns, bestLapTime)
+  + displayInfo()
+  + setBestLapTime(newBestLapTime)
+}
+
+class F1TrackProxy {
+  F1Track track
+
+  + F1TrackProxy(track)
+  + displayInfo()
+  + setBestLapTime(newBestLapTime)
+}
+
+F1TrackProxy -> F1Track
+
+F1Track "Spa-Francorchamps" <-- "1" proxySpa
+F1Track "Mexico City" <-- "2" proxyMexico
+F1Track "Monaco" <-- "3" proxyMonaco
+
+@enduml

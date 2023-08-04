@@ -1,0 +1,39 @@
+@startuml
+
+abstract class MobilAdapter {
+  +akselerasi(): void
+  +belok(): void
+}
+
+class MobilF1Adapter {
+  -_mobilF1: MobilF1
+  +MobilF1Adapter(mobilF1: MobilF1)
+  +akselerasi(): void
+  +belok(): void
+}
+
+abstract class MobilBalap {
+  +akselerasi(): void
+  +belok(): void
+}
+
+class MobilF1 {
+  +akselerasi(): void
+  +belok(): void
+}
+
+abstract class DataPerforma {
+  +getTenagaMesin(): void
+  +getKecepatanMaksimal(): void
+}
+
+class SistemPerforma {
+  +getTenagaMesin(): void
+  +getKecepatanMaksimal(): void
+}
+
+MobilAdapter <|.. MobilF1Adapter
+MobilBalap <|.. MobilF1
+DataPerforma <|.. SistemPerforma
+
+@enduml

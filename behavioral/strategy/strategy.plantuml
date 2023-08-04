@@ -1,0 +1,24 @@
+@startuml
+
+abstract class InfoStrategy {
+  +info(): void
+}
+
+class MobilF1InfoStrategy {
+  -_nama: String
+  -_tahun: int
+  +MobilF1InfoStrategy(nama: String, tahun: int)
+  +info(): void
+}
+
+class MobilBalap {
+  -_infoStrategy: InfoStrategy
+  +MobilBalap(infoStrategy: InfoStrategy)
+  +setInfoStrategy(infoStrategy: InfoStrategy): void
+  +info(): void
+}
+
+InfoStrategy <|.. MobilF1InfoStrategy
+MobilBalap --> InfoStrategy
+
+@enduml

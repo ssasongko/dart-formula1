@@ -1,0 +1,46 @@
+@startuml
+
+class F1Race {
+  + abstract void lakukanStartBalapan()
+  + abstract void lakukanBalapan()
+  + abstract void lakukanPitStop()
+  + void mulaiBalapan()
+  + void persiapkanMobil()
+  + void selesaikanBalapan()
+}
+
+class MonacoGrandPrix extends F1Race {
+  + F1RaceImplementation implementation
+  + MonacoGrandPrix() : super(MonacoGrandPrixImplementation())
+}
+
+class BelgianGrandPrix extends F1Race {
+  + F1RaceImplementation implementation
+  + BelgianGrandPrix() : super(BelgianGrandPrixImplementation())
+}
+
+class F1RaceImplementation {
+  + abstract void lakukanStartBalapan()
+  + abstract void lakukanBalapan()
+  + abstract void lakukanPitStop()
+}
+
+class MonacoGrandPrixImplementation extends F1RaceImplementation {
+  + void lakukanStartBalapan()
+  + void lakukanBalapan()
+  + void lakukanPitStop()
+}
+
+class BelgianGrandPrixImplementation extends F1RaceImplementation {
+  + void lakukanStartBalapan()
+  + void lakukanBalapan()
+  + void lakukanPitStop()
+}
+
+F1Race -> F1RaceImplementation
+MonacoGrandPrix -> F1RaceImplementation
+BelgianGrandPrix -> F1RaceImplementation
+F1RaceImplementation -> MonacoGrandPrixImplementation
+F1RaceImplementation -> BelgianGrandPrixImplementation
+
+@enduml

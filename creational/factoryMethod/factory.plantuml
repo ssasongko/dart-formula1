@@ -1,0 +1,40 @@
+@startuml
+
+class PersiapanBalapan {
+  +persiapanMobil(): void
+}
+
+class Kualifikasi {
+  +jalankanKualifikasi(): void
+}
+
+class PitStop {
+  +lakukanPitStop(): void
+}
+
+class Interview {
+  +lakukanInterview(): void
+}
+
+class Selebrasi {
+  +lakukanSelebrasi(): void
+}
+
+class F1Factory {
+  -instance: F1Factory
+  +{static} instance: F1Factory
+  +F1Factory()
+  +PersiapanBalapan persiapanBalapan
+  +Kualifikasi kualifikasi
+  +PitStop pitStop
+  +Interview interview
+  +Selebrasi selebrasi
+}
+
+PersiapanBalapan ..> F1Factory
+Kualifikasi ..> F1Factory
+PitStop ..> F1Factory
+Interview ..> F1Factory
+Selebrasi ..> F1Factory
+
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+
+abstract class PimpinanTimFactory {
+  +createPimpinanTim(name: String): PimpinanTim
+}
+
+class TimPrincipalFactory {
+  +createPimpinanTim(name: String): PimpinanTim
+}
+
+class PembalapFactory {
+  +createPimpinanTim(name: String): PimpinanTim
+}
+
+abstract class PimpinanTim {
+  -_successor: PimpinanTim
+  +setSuccessor(successor: PimpinanTim): void
+  +handleRequest(request: String): void
+}
+
+class TimPrincipal {
+  +handleRequest(request: String): void
+}
+
+class Pembalap {
+  -_nama: String
+  +Pembalap(name: String)
+  +handleRequest(request: String): void
+}
+
+PimpinanTimFactory <|-- TimPrincipalFactory
+PimpinanTimFactory <|-- PembalapFactory
+
+PimpinanTim <|-- TimPrincipal
+PimpinanTim <|-- Pembalap
+
+PimpinanTimFactory ..> PimpinanTim
+TimPrincipalFactory ..> TimPrincipal
+PembalapFactory ..> Pembalap
+
+@enduml
